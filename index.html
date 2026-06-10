@@ -87,20 +87,25 @@
                 </svg>
               </div>
             </div>
-            <div class="search-box"><span class="search-glyph" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.5 12.5 17 17"/></svg></span><span class="search-text">Search in English, বাংলা, or Banglish</span></div>
+            <div class="search-demo">
+              <label class="search-box" for="sample-search-input">
+                <span class="search-glyph" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.5 12.5 17 17"/></svg></span>
+                <input id="sample-search-input" class="search-input" type="text" placeholder="Search in English, বাংলা, or Banglish" autocomplete="off" spellcheck="false" aria-label="Search sample words" />
+              </label>
+            </div>
             <article class="word-card" id="dictionary">
               <div class="word-card-top">
-                <p>Word of the day</p>
+                <p id="word-card-label">Word of the day</p>
                 <div class="bookmark-icon" aria-hidden="true">
                   <svg viewBox="0 0 256 256" fill="currentColor">
                     <path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,11.58,7.16L128,198.43l60.42,32.73A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,178.52-52.42-28.39a8,8,0,0,0-7.16,0L72,210.52V48H184Z"></path>
                 </svg>
                 </div>
               </div>
-              <h2>meaning</h2>
-              <small>/ˈmiː.nɪŋ/</small>
-              <strong>অর্থ, মানে</strong>
-              <span>The idea or message that a word, sentence, or action expresses.</span>
+              <h2 id="word-card-title">meaning</h2>
+              <small id="word-card-pronunciation">/ˈmiː.nɪŋ/</small>
+              <strong id="word-card-translation">অর্থ, মানে</strong>
+              <span id="word-card-description">The idea or message that a word, sentence, or action expresses.</span>
               <div class="word-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
             </article>
             <div class="quick-title">Quick actions</div>
@@ -175,7 +180,31 @@
     <section class="why">
       <div class="container why-grid">
         <div class="book-scene" aria-hidden="true">
-          <img src="meaning.png" alt="" />
+          <div class="meaning-card">
+            <div class="meaning-card-top">
+              <span class="meaning-card-bookmark">
+                <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M72 216V56a16 16 0 0 1 16-16h80a16 16 0 0 1 16 16v160l-56-32Z"></path>
+                </svg>
+              </span>
+            </div>
+            <h3 id="meaning-card-title">meaning</h3>
+            <small id="meaning-card-pronunciation">/ˈmiː.nɪŋ/</small>
+            <strong id="meaning-card-translation">অর্থ, মানে</strong>
+            <div class="meaning-rule"></div>
+            <p id="meaning-card-description">The idea or message that a word, sentence, or action expresses.</p>
+            <div class="meaning-rule"></div>
+            <div class="meaning-meta">
+              <span>Synonyms</span>
+              <div class="meaning-synonyms">
+                <em>purpose</em>
+                <i></i>
+                <em>intent</em>
+                <i></i>
+                <em>significance</em>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <p class="eyebrow">Why Mane</p>
@@ -233,6 +262,7 @@
     </div>
   </footer>
 
+  <script src="mane-search.bundle.js"></script>
   <script>
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const siteNav = document.querySelector('#site-nav');
@@ -244,6 +274,8 @@
         navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
       });
     }
+
+    window.__m?.();
   </script>
 </body>
 </html>
